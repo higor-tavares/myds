@@ -1,8 +1,15 @@
+import { useState } from 'react';
 import styles from './card.module.css';
-import { Heart } from 'react-bootstrap-icons';
+import { Heart, HeartFill } from 'react-bootstrap-icons';
 import { Play } from 'react-bootstrap-icons';
 
 export default function VideoCard(props){
+    const [heartFilled, setHeartFilled] = useState(false)
+
+    const fillHeart = () => {
+        setHeartFilled(!heartFilled);
+    }
+
     return (
         <div className={styles.card}>
             <div className={styles.cardImage}>
@@ -21,7 +28,9 @@ export default function VideoCard(props){
             </div>
             <div className={styles.classFooter}>
                 <div>{props.info}</div>
-                <div className={styles.cardFooterButton}><Heart></Heart></div>
+                <div className={styles.cardFooterButton} onClick={fillHeart}>
+                    {{heartFilled} ? <Heart></Heart> : <HeartFill></HeartFill>}
+                </div>
             </div>
         </div>
     );

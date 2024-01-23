@@ -21,12 +21,13 @@
 .cardTitle {
     font-weight: bold;
     font-size: 1.2em;
+    margin: 16px 0;
 }
 .classFooter{
     border-top: 1px solid white;
-    margin: 16px;
     padding: 8px;
     display: flex;
+    margin: 16px 0;
     justify-content: space-between;
 }
 .cardFooterButton {
